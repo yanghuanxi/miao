@@ -37,19 +37,19 @@
   console.log(x.toFixed(9));
 </script>
 
-<script id="ch0103/06">
-  var a = Number(prompt("请输入死亡人数"));
-  var b = Number(prompt("请输入确诊人数"));
-  var x = a / b * 100;
+<script id="ch0104/06">
+  var a = Number(prompt("请输入确诊人数"));
+  var b = Number(prompt("请输入死亡人数"));
+  var x = b / a * 100;
   console.log(x.toFixed(3) + '%');
 </script>
 
 <script id="ch0103/07">
+  var x = Number(prompt("请输入x值"));
   var a = Number(prompt("请输入a值"));
   var b = Number(prompt("请输入b值"));
   var c = Number(prompt("请输入c值"));
   var d = Number(prompt("请输入d值"));
-  var x = Number(prompt("请输入x值"));
   var y = a * x * x * x + b * x * x + c * x + d;
   console.log(y.toFixed(7));
 </script>
@@ -58,4 +58,15 @@
   var F = Number(prompt("请输入华氏度值"));
   var C = 5 * (F - 32) / 9;
   console.log(C.toFixed(5));
+</script>
+
+<script id="ch0103/09">
+  var r = Number(prompt("请输入圆的半径"));
+  var pi = 3.14159;
+  var d = 2 * r;
+  var c = 2 * pi * r;
+  var s = pi * r * r;
+  console.log(d.toFixed(4));
+  console.log(c.toFixed(4));
+  console.log(s.toFixed(4));
 </script>
