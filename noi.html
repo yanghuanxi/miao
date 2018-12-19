@@ -1,29 +1,29 @@
 <script id="ch0103/01">
-  var a = Number(prompt("请输入A值"));
-  var b = Number(prompt("请输入B值"));
+  var a = Number(prompt("请输入A值","1"));
+  var b = Number(prompt("请输入B值","2"));
   var x = a + b; 
   console.log(x);
 </script>
 
 <script id="ch0103/02">
-  var a = Number(prompt("请输入A值"));
-  var b = Number(prompt("请输入B值"));
-  var c = Number(prompt("请输入C值"));
+  var a = Number(prompt("请输入A值","2"));
+  var b = Number(prompt("请输入B值","3"));
+  var c = Number(prompt("请输入C值","5"));
   var x = (a + b) * c; 
   console.log(x);
 </script>
 
 <script id="ch0103/03">
-  var a = Number(prompt("请输入A值"));
-  var b = Number(prompt("请输入B值"));
-  var c = Number(prompt("请输入C值"));
+  var a = Number(prompt("请输入A值","1"));
+  var b = Number(prompt("请输入B值","1"));
+  var c = Number(prompt("请输入C值","3"));
   var x = (a + b) / c;
   console.log(parseInt(x));
 </script>
 
 <script id="ch0103/04">
-  var a = Number(prompt("请输入A值"));
-  var b = Number(prompt("请输入B值"));
+  var a = Number(prompt("请输入A值","10"));
+  var b = Number(prompt("请输入B值","3"));
   var x = a / b;
   var y = a % b;
   console.log(parseInt(x));
@@ -31,37 +31,37 @@
 </script>
 
 <script id="ch0103/05">
-  var a = Number(prompt("请输入A值"));
-  var b = Number(prompt("请输入B值"));
+  var a = Number(prompt("请输入A值","5"));
+  var b = Number(prompt("请输入B值","7"));
   var x = a / b;
   console.log(x.toFixed(9));
 </script>
 
 <script id="ch0103/06">
-  var a = Number(prompt("请输入确诊人数"));
-  var b = Number(prompt("请输入死亡人数"));
+  var a = Number(prompt("请输入确诊人数","10433"));
+  var b = Number(prompt("请输入死亡人数","60"));
   var x = b / a * 100;
   console.log(x.toFixed(3) + '%');
 </script>
 
 <script id="ch0103/07">
-  var x = Number(prompt("请输入x值"));
-  var a = Number(prompt("请输入a值"));
-  var b = Number(prompt("请输入b值"));
-  var c = Number(prompt("请输入c值"));
-  var d = Number(prompt("请输入d值"));
+  var x = Number(prompt("请输入x值","2.31"));
+  var a = Number(prompt("请输入a值","1.2"));
+  var b = Number(prompt("请输入b值","2"));
+  var c = Number(prompt("请输入c值","2"));
+  var d = Number(prompt("请输入d值","3"));
   var y = a * x * x * x + b * x * x + c * x + d;
   console.log(y.toFixed(7));
 </script>
 
 <script id="ch0103/08">
-  var F = Number(prompt("请输入华氏度值"));
+  var F = Number(prompt("请输入华氏度值","41"));
   var C = 5 * (F - 32) / 9;
   console.log(C.toFixed(5));
 </script>
 
 <script id="ch0103/09">
-  var r = Number(prompt("请输入圆的半径"));
+  var r = Number(prompt("请输入圆的半径","3.0"));
   var pi = 3.14159;
   var d = 2 * r;
   var c = 2 * pi * r;
@@ -72,21 +72,68 @@
 </script>
 
 <script id="ch0103/10">
-  var r1 = Number(prompt("请输入电阻r1的值"));
-  var r2 = Number(prompt("请输入电阻r2的值"));
+  var r1 = Number(prompt("请输入电阻r1的值","1"));
+  var r2 = Number(prompt("请输入电阻r2的值","2"));
   var r = 1 / (1 / r1 + 1 / r2);
   console.log(r.toFixed(2));
 </script>
 
 <script id="ch0103/11">
-  var a = parseFloat(prompt("请输入浮点数a"));
-  var b = parseFloat(prompt("请输入浮点数b"));
+  var a = parseFloat(prompt("请输入浮点数a","73.263"));
+  var b = parseFloat(prompt("请输入浮点数b","0.9973"));
   var r = a - k * b;
   var k = parseInt(a / b);
-  console.log(r.toFixed(4));
+  console.log(k.toFixed(4));
 </script>
 
-<script id ="ch0104/09">
+<script id="ch0103/12">
+  var r = Number(prompt("请输入球的半径","4"));
+  var pi = 3.14;
+  var V = 4 / 3 * pi * Math.pow(r,3);
+  console.log(V.toFixed(2));
+</script>
+
+<script id="ch0103/13">
+  var n = Number(prompt("请输入一个三位数","100"));
+  var a = String(n % 10);
+  var b = String((n - a) % 100 / 10);
+  var c = String((n - a - b * 10) / 100);
+  var d = a + b + c;
+  console.log(d);
+</script>
+
+<script id="ch0103/14">
+  var h = Number(prompt("请输入桶的高度","23"));
+  var r = Number(prompt("请输入桶的半径","11"));
+  var pi = 3.14;
+  var v = h * pi * Math.pow(r,2);
+  var n = Math.ceil(20000 / v);
+  console.log(n);
+</script>
+
+<script id="ch0103/15">
+  var n = Number(prompt("请输入你买的苹果个数","10"));
+  var x = Number(prompt("请输入虫子吃掉一个苹果所需小时数","4"));
+  var y = Number(prompt("请输入虫子吃苹果的总小时数","9"));
+  var z = n - Math.ceil(y / x);
+  console.log(z);
+</script>
+
+<script id="ch0103/16">
+  var Xa = Number(prompt("请输入A点横坐标","1"));
+  var Ya = Number(prompt("请输入A点纵坐标","1"));
+  var Xb = Number(prompt("请输入B点横坐标","2"));
+  var Yb = Number(prompt("请输入B点纵坐标","2"));
+  var l = Math.pow(Math.pow(Xa - Xb,2) + Math.pow(Ya - Yb,2),1 / 2);
+  console.log(l.toFixed(3));
+</script>
+
+
+
+
+	
+
+<script id="ch0104/09">
   var n = Number(prompt("请输入一个数"))
   var canDividedBy3 = n % 3 === 0;
   var canDividedBy5 = n % 5 === 0;
