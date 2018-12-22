@@ -161,10 +161,16 @@
 </script>
 
 <script id="ch0104/01">
-  var n = Number(prompt("请输入整数n","3"));
-  var count = 1;
-  for(var i = 0;i < n; i++)
-  console.log(a * b);
+  var n = Number(prompt("请输入整数n","1"));
+  if (n > 0) {
+  	console.log("positive")
+  }
+  if (n = 0) {
+  	console.log("zero")
+  }
+  if (n < 0) {
+  	console.log("negative")
+  }
 </script>
 
 <script id="ch0104/02">
@@ -247,11 +253,184 @@
   var a = Number(prompt("请输语文成绩","50"));
   var b = Number(prompt("请输数学成绩","80"));
     if (a >= 60 ^ b >= 60){
+  console.log('1')}
+    else{
+  console.log('0')}
+</script>
+
+<script id="ch0104/11">
+  var a = Number(prompt("请输入展览日期","2"));
+    if ((a ==2) || (a == 4) || (a == 6) || (a == 7)) {
   console.log('YES')}
     else{
   console.log('NO')}
 </script>
 
+<script id="ch0104/12">
+  var distance = Number(prompt("请输入一段距离","120"));
+  var timeWalk = distance / 1.2;
+  var timeBike = distance / 3 + 50;
+    if (timeWalk < timeBike) {
+      console.log('Walk')
+    }
+    if (timeWalk > timeBike) {
+      console.log('Bike')
+    }
+    if (timeWalk == timeBike) {
+      console.log('All')
+    }
+</script>
+
+<script id="ch0104/13">
+  var N = Number(prompt("请输入一个浮点数","1.0"));
+  var x = N;
+  var y;
+    if (0 <= x && x < 5) {
+      y = -x + 2.5;
+    }
+    if (5 <= x && x < 10) {
+      y = 2 - 1.5 * Math.pow((x - 3), 2);
+    }
+    if (10 <= x && x < 20) {
+      y = x / 2 - 1.5;
+    }
+    console.log(y.toFixed(3))
+</script>
+
+<script id="ch0104/14">
+  var weight = Number(prompt("请输入邮件的重量","1200"));
+  var whether = prompt("邮件是否加急?y/n","y");
+  var postage = 8;
+   if (weight > 1000) {
+      postage += Math.ceil((weight - 1000) / 500) * 4;
+    }
+    if (whether === 'y') {
+      postage += 5;
+    }
+      console.log(postage)
+</script>
+
+<script id="ch0104/15">
+  var integer1 = Number(prompt("请输入一个整数","10"));
+  var integer2 = Number(prompt("请输入一个整数","20"));
+  var integer3 = Number(prompt("请输入一个整数","56"));
+  var max = integer1;
+    if (integer2 > max){
+    	max = integer2;
+    }
+    if (integer3 > max){
+    	max = integer3;
+    }
+    console.log(max)
+</script>
+
+<script id="ch0104/16">
+  var length1 = Number(prompt("请输入一个整数","3"));
+  var length2 = Number(prompt("请输入一个整数","4"));
+  var length3 = Number(prompt("请输入一个整数","5"));
+  var str = "";
+    if (length1 + length2 > length3 && length2 + length3 > length1 && length3 + length1 > length2){
+    	str = "yes";
+    }
+    else{
+    	str = "no";
+    }
+    console.log(str)
+</script>
+
+<script id="ch0104/17">
+  var year = Number(prompt("请输入一个年数","2006"));
+  var str = "";
+    if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)){
+    	str = "Y";
+    }
+    else{
+    	str = "N";
+    }
+    console.log(str)
+</script>
+
+<script id="ch0104/18">
+  var abscissa = Number(prompt("请输入横坐标","1"));
+  var ordinate = Number(prompt("请输入纵坐标","1"));
+  var str = "";
+    if (Math.abs(abscissa) < 1 && Math.abs(ordinate) < 1){
+    	str = "yes";
+    }
+    else{
+    	str = "no";
+    }
+    console.log(str)
+</script>
+
+<script id="ch0104/19">
+  var integer1 = Number(prompt("请输入第一个整数","1"));
+  var integer2 = Number(prompt("请输入第二个整数","2"));
+  var operator = prompt("请输入运算符","+")
+  var result
+    if (operator == "+") {
+    	result = integer1 + integer2;
+    }
+    if (operator == "-") {
+    	result = integer1 - integer2;
+    }
+    if (operator == "*") {
+ 		result = integer1 * integer2;
+    }
+    if (operator == "/") {
+    	result = integer1 / integer2;
+    }
+    switch (operator){
+    	case "+":
+    	  console.log(result)
+    	  break;
+    	case "-":
+    	  console.log(result)
+    	  break;
+    	case "*":
+          console.log(result)
+          break;
+    	case "/":
+    	  console.log(result)
+    	  break;
+    	default:console.log("Invalid operator!")
+    }
+</script>
+
+<script id="ch0104/20">
+  var a = Number(prompt("请输入一元二次方程的二次项系数","1.0"));
+  var b = Number(prompt("请输入一元二次方程的一次项系数","2.0"));
+  var c = Number(prompt("请输入一元二次方程的常数项","8.0"));
+  var delta = b * b - 4 * a * c;
+  var x1 = ((-b + Math.sqrt(delta)) / (2 * a)).toFixed(5);
+  var x2 = ((-b - Math.sqrt(delta)) / (2 * a)).toFixed(5);
+  var x = (-b / (2 * a)).toFixed(5);
+  var x3 = (-b/2*a).toFixed(5) + "-" + (Math.pow(4*a*c-b*b,1/2) / 2 * a).toFixed(5) + "i";
+  var x4 = (-b/2*a).toFixed(5) + "+" + (Math.pow(4*a*c-b*b,1/2) / 2 * a).toFixed(5) + "i";
+  var x5 = (-b/2*a).toFixed(5)  + ((Math.pow(4*a*c-b*b,1/2) / 2 * a).toFixed(5) + "i");
+  var x6 = (-b/2*a).toFixed(5)  + ((Math.pow(4*a*c-b*b,1/2) / 2 * a).toFixed(5) + "i");
+    if (delta > 0){
+      console.log("方程的实根分别为：" + "x1=" + x1 + " " + "x2=" + x2);
+    }
+    else if (delta < 0 && a > 0){
+      console.log("方程的虚根分别为：" + "x3=" + x3 + " " + "x4=" + x4);
+    }
+    else if (delta < 0 && a < 0){
+      console.log("方程的虚根分别为：" + "x5=" + x5 + " " + "x6=" + x6);
+    }
+    else{
+       console.log("方程的唯一根为：" + "x=" + x);
+    }
+</script>
+
+<script id="ch0104/21">
+  var appleNumber = Number(prompt("请输入苹果个数","10"));
+  var timeRequired = Number(prompt("请输入虫子吃掉一个苹果所需小时数","4"));
+  var elapsedTime = Number(prompt("请输入经过的小时数","9"));
+  var lastNumber;
+    lastNumber = appleNumber - Math.ceil(elapsedTime / timeRequired);
+    console.log(lastNumber)
+</script>
 
 <script id="ch0105/01">
   var n = Number(prompt("请输入学生人数","2"));
@@ -287,6 +466,75 @@
     }
   console.log((s / n).toFixed(4));
 </script>
+
+<script id="ch0105/16">
+  var moneyYear = Number(prompt("请输入年薪"));
+  var growthRate = Number(prompt("请输入增长率"));
+  var sum = moneyYear;
+  var housePrice = 200;
+  for (var i = 1; i < 20; i++) {
+  	sum += moneyYear;
+  	housePrice *= growthRate / 100 + 1;
+  	if (sum >= housePrice) {
+  		i = i + 1;
+  		console.log(i)
+  		break;
+  	}
+  	if (sum < housePrice) {
+  		console.log('Impossible')
+  		break;
+  	}
+  }
+</script>
+
+
+<script id="ch0105/31">
+  var lightNumber = Number(prompt("请输入灯的个数","10"));
+  var humanNumber = Number(prompt("请输入人的个数","10"));
+  var switchNumber = 1;
+  for (var i = 1; i <= lightNumber; i++) {
+    for (var j = 1; j <= humanNumber; j++) {
+  	if (i % j == 0) {
+  		switchNumber *= -1;
+  	}
+  }
+  	if (switchNumber == -1) {
+  		console.log(i)
+  	}
+  	switchNumber = 1;
+  }
+</script>
+
+
+<script>
+
+	  var a = +prompt();
+  var b = +prompt();
+  var c;
+  var r = '';
+  for(var i=1; i<=a; i++) {
+    c = 1;
+    for(var j=1; j<=b; j++) {
+      if(i>=j && !(i%j)) {
+        c = -c;
+      }
+    }
+    if(c < 0) {
+      r += (r&&',') + i;
+    }
+  }
+  console.log(r);
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 
