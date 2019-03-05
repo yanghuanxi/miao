@@ -244,7 +244,7 @@
 <script id="ch0104/04">
   var a = prompt("请输入一个字符","A");
   var b = a.charCodeAt(0);
-    if (b % 2 == 1){
+    if (b % 2 == 1){   
   console.log('YES')}
     if (b % 2 == 0){
   console.log('NO')}
@@ -422,34 +422,25 @@
   var operator = prompt("请输入运算符","+")
   var result
     if (operator == "+") {
-    	result = integer1 + integer2;
+    	console.log(integer1 + integer2);
     }
-    if (operator == "-") {
-    	result = integer1 - integer2;
+    else if (operator == "-") {
+    	console.log(integer1 - integer2);
     }
-    if (operator == "*") {
- 		result = integer1 * integer2;
+    else if (operator == "*") {
+ 		  console.log(integer1 * integer2);
     }
-    if (operator == "/") {
-    	result = integer1 / integer2;
+    else if (operator == "/") {
+      if (integer2 == 0) {
+        console.log("Divided by zero!")
+      } else {
+        console.log(integer1 / integer2);
+      }
     }
-    switch (operator){
-    	case "+":
-    	  console.log(result)
-    	  break;
-    	case "-":
-    	  console.log(result)
-    	  break;
-    	case "*":
-          console.log(result)
-          break;
-    	case "/":
-    	  console.log(result)
-    	  break;
-    	default:console.log("Invalid operator!")
+    else {console.log("Invalid operator!")
     }
 </script>
-
+      
 <script id="ch0104/20">
   var a = Number(prompt("请输入一元二次方程的二次项系数","1.0"));
   var b = Number(prompt("请输入一元二次方程的一次项系数","2.0"));
