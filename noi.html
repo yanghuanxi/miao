@@ -1,3 +1,57 @@
+<script id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+  var num1 = Number(prompt("请输入数1","4"));
+  var num2 = Number(prompt("请输入数2","1"));
+  var num3 = Number(prompt("请输入数3","7"));
+  var num4;
+    if (num1 > num2) {
+    num4 = num1;
+    num1 = num2;
+    num2 = num4;
+    }
+    if (num2 > num3) {
+    num4 = num2;
+    num2 = num3;
+    num3 = num4;
+    }
+    if (num1 > num3) {
+    num4 = num1;
+    num1 = num3;
+    num3 = num4;
+    }
+    console.log(num1);console.log(num2);console.log(num3)
+</script>
+
+<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+	var number = Number(prompt("请输入一个数"));
+	var a,b,c,d,e;
+	for ( var count =)
+	a = number % 10;
+	  if (100 <= number && number < 1000){
+          b = (number - a) % 100 / 10;
+          c = (number - a - b * 10) / 100;
+          if (Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3) == number){
+          	console.log("YES")
+          } 
+	  }
+		if (1000 <= number && number < 10000){
+		  b = (number - a) % 1000 % 100 / 10;
+          c = (number - a - b * 10) % 1000 / 100;
+          d = (number - a - b * 10 - c * 100) /1000;
+          if (Math.pow(a,4) + Math.pow(b,4) + Math.pow(c,4) + Math.pow(d,4) == number){
+          	console.log("YES")
+		}
+	  }
+		if (10000 <= number && number < 100000){
+		  b = (number - a) % 10000 % 1000 % 100 /10;
+          c = (number - a - b * 10) % 10000 % 1000 / 100;
+          d = (number - a - b * 10 - c * 100) % 10000 / 1000;
+          e = (number - a - b * 10 - c * 100 - d * 1000) / 10000;
+          if (Math.pow(a,5) + Math.pow(b,5) + Math.pow(c,5) + Math.pow(d,5) + Math.pow(e,5) == number){
+          	console.log("YES")
+		}
+	  }
+</script>
+
 <script id="ch0103/01">
   var a = Number(prompt("请输入A值","1"));
   var b = Number(prompt("请输入B值","2"));
@@ -81,9 +135,9 @@
 <script id="ch0103/11">
   var a = parseFloat(prompt("请输入浮点数a","73.263"));
   var b = parseFloat(prompt("请输入浮点数b","0.9973"));
-  var r = a - k * b;
   var k = parseInt(a / b);
-  console.log(k.toFixed(4));
+  var r = a - k * b;
+  console.log(r.toFixed(4));
 </script>
 
 <script id="ch0103/12">
@@ -354,7 +408,7 @@
   var abscissa = Number(prompt("请输入横坐标","1"));
   var ordinate = Number(prompt("请输入纵坐标","1"));
   var str = "";
-    if (Math.abs(abscissa) < 1 && Math.abs(ordinate) < 1){
+    if (Math.abs(abscissa) <= 1 && Math.abs(ordinate) <= 1){
     	str = "yes";
     }
     else{
@@ -467,11 +521,23 @@
   console.log((s / n).toFixed(4));
 </script>
 
+<script id="ch0105/15">
+  var rate = Number(prompt("请输入复合年利率","5"));
+  var money = Number(prompt("请输入本金","5000"));
+  var year = Number(prompt("请输入投资年限","4"));
+  var finalMoney = money * ((1 + rate / 100) ** year);
+  console.log(parseInt(finalMoney))
+</script>
+
 <script id="ch0105/16">
-  var moneyYear = Number(prompt("请输入年薪"));
-  var growthRate = Number(prompt("请输入增长率"));
+  var moneyYear = Number(prompt("请输入年薪","50"));
+  var growthRate = Number(prompt("请输入增长率","10"));
   var sum = moneyYear;
   var housePrice = 200;
+  if (moneyYear > 200){
+  	console.log(1)
+  }
+  else{
   for (var i = 1; i < 20; i++) {
   	sum += moneyYear;
   	housePrice *= growthRate / 100 + 1;
@@ -480,12 +546,57 @@
   		console.log(i)
   		break;
   	}
-  	if (sum < housePrice) {
+  }
+  if (sum < housePrice) {
   		console.log('Impossible')
-  		break;
   	}
   }
 </script>
+
+<script id="ch0105/18">
+  var groups = Number(prompt("请输入临床对照实验组数","5"));
+  var cockTotal = Number(prompt("请输入鸡尾酒总病例数","125"));
+  var cockEffective = Number(prompt("请输入鸡尾酒有效病例数","99"));
+  for (var i = 2;i <= groups;i++){
+  	var totalCase = Number(prompt("请输入总病例数"))
+  	var effectiveCase = Number(prompt("请输入有效病例数"))
+  	if ((effectiveCase / totalCase - cockEffective / cockTotal) > 0.05){
+  		console.log("better")
+  	}
+  	else if ((cockEffective / cockTotal - effectiveCase / totalCase) > 0.05){
+  		console.log("worse")
+  	}
+  	else {
+  		console.log("same")
+  	}
+  }
+</script>
+
+<script id="ch0105/19">
+  var roofNumber = Number(prompt("请输入屋顶总数","1"));
+  for (var i = 1;i <= roofNumber;i++){
+  	var abscissa = Number(prompt("请输入屋顶横坐标"))
+  	var ordinate = Number(prompt("请输入屋顶纵坐标"))
+  	var peopleNumber = Number(prompt("请输入屋顶人数"))
+  	var totalTime = Math.pow((Math.pow(abscissa,2) + Math.pow(ordinate,2)),1 / 2) / 50 * 2 + 1.5 *peopleNumber;
+  	  console.log(Math.ceil(totalTime))
+  	}
+</script>
+
+<script id="ch0105/20">
+  var initialHeight = Number(prompt("请输入球的初始高度","20"));
+  var totalHeight;
+  var bounceHeight = initialHeight * Math.pow(0.5,10);
+    for(var i = 1;i < 11;i++){
+    totalHeight = initialHeight * 1.5 * (1 - Math.pow(0.5,i)) / 0.5;
+    }
+  console.log(totalHeight - bounceHeight)
+  console.log(bounceHeight)
+</script>
+
+
+
+
 
 
 <script id="ch0105/31">
@@ -505,26 +616,60 @@
   }
 </script>
 
-
-<script>
-
-	  var a = +prompt();
-  var b = +prompt();
-  var c;
-  var r = '';
-  for(var i=1; i<=a; i++) {
-    c = 1;
-    for(var j=1; j<=b; j++) {
-      if(i>=j && !(i%j)) {
-        c = -c;
-      }
+<script id="ch0105/38">
+  var highestPower = Number(prompt("请输入多项式的最高次幂"));
+  for (var i = highestPower;i >= 0;i--) {
+  var coefficient = Number(prompt("请输入项的系数"));
+    if (highestPower == 0 ) { 
+  	console.log(0)
     }
-    if(c < 0) {
-      r += (r&&',') + i;
+    if (i!=0) {
+  	console.log(i * coefficient);
     }
-  }
-  console.log(r);
+}
 </script>
+ 
+
+  
+
+<script id="ch0105/39">
+  var integer = Number(prompt("请输入一个正整数"));
+  var n;
+  var sum = 0;
+  var digital;
+  var has7;
+  for (var i = 1;i <= integer;i++) {
+  	if (i % 7 != 0) {
+  	  n = i;
+  	  has7 = false;
+  	  while (n > 0) {
+  	    digital = n % 10;
+  	    if (digital === 7){
+  		  has7 = true;
+  		  break;
+  	    }
+  	    n = (n - digital) / 10;
+  	  }
+  	  if (has7) {
+  	  	continue;
+  	  }
+  	  sum += i * i;
+  	}
+  }
+  console.log(sum)
+</script>
+
+<script id="ch0105/40">
+  var integer = Number(prompt("请输入一个正整数"));
+
+  for (var i = 1;i <= integer;i++) {
+ 
+  console.log(i)
+  }
+</script>
+
+
+
 
 
 
